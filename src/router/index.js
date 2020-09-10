@@ -1,6 +1,16 @@
+/*
+ * @Author: your name
+ * @Date: 2020-08-20 21:28:32
+ * @LastEditTime: 2020-08-20 21:56:25
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \travle\src\router\index.js
+ */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../pages/home/Home.vue'
+import City from '../pages/city/City.vue'
+import Detail  from '../pages/detail/Detail.vue'
 
 Vue.use(VueRouter)
 
@@ -11,13 +21,18 @@ Vue.use(VueRouter)
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path:'/city',
+    name:'City',
+    component: City,
+   
+  },
+  {
+    path:'/detail/:id',
+    name:'Detail',
+    component: Detail,
+   
   }
+  
 ]
 
 const router = new VueRouter({
